@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+    </script>
+    <script>
+        if (!('noModule' in HTMLScriptElement.prototype))
+            alert('This browser is unsupported, and the game may not work correctly. Please use a modern browser like Google Chrome.');
+        // window.location.href = 'https://mtsl.dk/e/unsupportedbrowser#r=g=csc2';
+    </script>
+    <!--   Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-182376493-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-182376493-3');
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="robots" content="nosnippet,noimageindex" />
+    <title>Google Drive</title>
+    <meta name="description" content="The unblocked version of Case Clicker 2, a game created by Malthe." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=2.0.b17" />
+   <link rel="icon"  href="https://cdn.glitch.global/ad30447f-10be-4ea1-a2e3-200ac4f18581/favicon.png?v=1734361777541">
+</head>
+
+<body>
+    <!--
+    -->
+    <!-- (MTSL) NAV -->
+    <div class="standard-nav">
+        <a href="//mtsl.dk" id="focus-home">
+            <div class="nav-button">MTSL.DK</div>
+        </a>
+        <a href="//twitter.com/Malthsl">
+            <div class="nav-button">Twitter</div>
+        </a>
+        <div class="nav-separator"></div>
+        <div class="nav-button" showpage="welcome">Case Clicker 2 (Unblocked)</div>
+        <div class="nav-button" showpage="about">About & Settings</div>
+        <div class="nav-button" style="color:#fc0;font-weight:bold;background:#333;margin-right:12px;display:none" id="recover-btn">
+            Did you lose your save? Click to Recover It!
+        </div>
+        <div class="nav-button" style="color:#fff;font-weight:bold;background:#333;margin-right:12px;display:none" id="dismiss-recover-btn">
+            Or Dismiss!
+        </div>
+    
+        <div class="right"></div>
+        <!-- Local Profile -->
+        <div id="nav-profile"></div>
+        <!-- Authentication for Firebase -->
+        <div class="nav-button" id="authentication-bar" style="display:none;"></div>
+        <div class="nav-separator"></div>
+        <!-- Bugs -->
+        <a href="https://twitter.com/messages/778575498544869376-778575498544869376?recipient_id=778575498544869376&text=I%20found%20a%20bug!" rel="noopener noreferrer" target="_blank">
+            <div class="nav-button">Feedback</div>
+        </a>
+    </div>
+    <!-- Loading Splash -->
+    <div id="loading">
+        <p style="color: red">Case Clicker 2 - Unblocked!</p>
+        <p id="loading-text">Loading...</p>
+        <p id="loading-status">Loading Website...</p>
+        <span id="loading-progressbar">
+        <span id="loading-progress"></span>
+        </span>
+    </div>
+    <!-- SIDE NAV -->
+    <div id="menu">
+        <div id="stats">
+            <div id="currency">
+                <div id="money"></div>
+            </div>
+            <div id="currency-other">
+                <div id="tickets"></div>
+                <div id="tokens"></div>
+            </div>
+            <div id="level">
+                <div id="level-bar-text">
+                    <div id="level-bar-text-left"></div>
+                    <div id="level-bar-text-right"></div>
+                </div>
+                <div id="level-bar">
+                    <div id="level-bar-p"></div>
+                </div>
+                <div id="level-image"></div>
+                <div id="level-title"></div>
+            </div>
+        </div>
+        <div id="nav">
+            <div id="lucky-wheel-nav">
+                <button showpage="spin" nbtn="spin">
+            <img src="images/luckywheel.png">Lucky Wheel
+          </button>
+            </div>
+            <button showpage="click" nbtn="click">
+          <img src="images/click.png">
+          Earn
+        </button>
+            <button showpage="inventory" nbtn="inventory">
+          <img src="images/inventory.png">
+          Inventory
+        </button>
+            <button showpage="shop" nbtn="shop">
+          <img src="images/shop.png">
+          Shop
+        </button>
+            <button showpage="betting" nbtn="betting">
+          <img src="images/casino.png">
+          Games
+        </button>
+            <button showpage="upgrades" nbtn="upgrades">
+          <img src="images/upgrades.png">
+          Upgrade
+        </button>
+            <button showpage="tradeup" nbtn="tradeup">
+          <img src="images/tradeup.png">
+          Trade up
+        </button>
+            <button showpage="missions" nbtn="missions">
+          <img src="images/missions.png">
+          Missions
+          <div id="missions-progressbar">
+            <div id="missions-progress"></div>
+          </div>
+          <div id="missions_not_collected"></div>
+        </button>
+            <div class="combo-nav">
+                <button showpage="achievements" nbtn="achievements" tip="Achievements" tipposition="center">
+            <img src="images/achievements.png">
+            <div id="achievements_not_collected"></div>
+          </button>
+                <button showpage="collection" nbtn="collection" tip="Collection Book" tipposition="center">
+            <img src="images/collection-book.png">
+          </button>
+              <button showpage="leaderboard" nbtn="leaderboard" tip="Leaderboard" tipposition="center">
+            <img src="images/leaderboard.png">
+          </button>
+            </div>
+        </div>
+    </div>
+    <!-- PAGES -->
+    <div id="pages">
+        <!-- Static HTML -->
+        <div class="page" page="about">
+            <!-- About page -->
+            <div class="about-version">
+                <h1>Case Clicker 2 <i>Unblocked</i> Settings</h1>
+                <div id="about-settings">
+                    <div class="floating-item-example">
+                        <i>Here is an example of an item card.</i>
+                        <div id="floating-item-example"></div>
+                    </div>
+                    <h2>Settings</h2>
+                    <br>
+                    <p>Graphics Level: <span id="current-graphic-level"></span></p>
+                    <div style="display: flex">
+                        <button class="combo-button" onclick="setGraphicsLevel(0)">No effects & less animations</button>
+                        <button class="combo-button" onclick="setGraphicsLevel(1)">Low</button>
+                        <button class="combo-button" onclick="setGraphicsLevel(2)">Medium</button>
+                        <button class="combo-button" onclick="setGraphicsLevel(3)">Ultra</button>
+                    </div>
+                    <br>
+                    <p>Always Compact?</p>
+                    <button class="button n" onclick="setAlwaysCompact(!alwaysCompact)" id="toggle-compact">Toggle Compact
+            </button>
+                    <br>
+                    <br>
+                    <p>Enter Code</p>
+                    <input type="text" class="input" id="enter-code-input" style="margin:0">
+                    <button class="button" id="enter-code-button">Enter</button>
+                    <div id="enter-code-error-success"></div>
+                    <br>
+                    <p>Wipe Save?</p>
+                    <button class="button n red" onclick="confirm('Are you sure? This cannot be undone.') && wipeSave()">Wipe
+                                                                                                                 your
+                                                                                                                 save
+            </button>
+                    <br>
+                    <br>
+                    <p>Profile</p>
+                    <button class="button n" onclick="openProfilePopup()">Change name</button>
+                    <button class="button n" onclick="updateProfilePicture()">Update profile picture</button>
+                    <button class="button n" onclick="clearProfilePicture()">Remove profile picture</button>
+                </div>
+                <div id="about-changelog">
+                    <h2>Changelog</h2>
+                    <br>
+                    <p><strong>Version 2.17</strong><i> - July 2022</i></p>
+                    <p>* Games/Casino:</p>
+                    <p style="margin-left: 20px;">* Added roulette.</p>
+                    <p style="margin-left: 20px;">* Added slots.</p>
+                    <p style="margin-left: 20px;">* Improved the Jackpot game: You can now see the top skins in a jackpot game.
+                    </p>
+                    <p style="margin-left: 20px;">* Improved the Crash game.</p>
+                    <p style="margin-left: 20px;">* Improved the coinflip server.</p>
+                    <p style="margin-left: 20px;">* Improved the casino UX when converting to and from coins.</p>
+                    <p style="margin-left: 20px;">* 1 € is now 8 chips.</p>
+                    <p>* Inventory:</p>
+                    <p style="margin-left: 20px;">* Added inventory search.</p>
+                    <p style="margin-left: 20px;">* Added alphabetic sorting to the inventory.</p>
+                    <p>* Added profile pictures.</p>
+                    <p>* Added new statistics and missions.</p>
+                    <p>* Removed the leaderboard.</p>
+                    <p>* Out of beta, kinda, nothing really has changed but it can't stay in "beta" forever.</p>
+                    <p>* Other minor improvements.</p>
+                    <br>
+                    <p><strong>Version 2.0.b16</strong><i> - 24. January 2022</i></p>
+                    <p>* Added trade up contracts. But right now they aren't exactly 1-1 with the how they work in CS.</p>
+                    <p>* Added the collection book.</p>
+                    <p>* Added favorites. Items in your favorites are protected from being betted or sold.</p>
+                    <p>* Added more sell options.</p>
+                    <p>* Added a lot of Doppler and Gamma Doppler Phases.</p>
+                    <p>* Added 2013 and 2014 eSports cases and the new Dreams and Nightmares case.</p>
+                    <p>* Increased the prices of some collections.</p>
+                    <p>* Selling is now asynchronous, meaning it won't lag as much while selling.</p>
+                    <p>* Added auto bet.</p>
+                    <p>* Added select items filters.</p>
+                    <p style="margin-left: 20px;">* Including "Auto" filter, which only shows skins that can be added to your selection without going over limits.</p>
+                    <p>* Improved the performance of the game.</p>
+                    <p>* Fixed some bugs & general improvements.</p>
+                    <br>
+                    <p><strong>Version 2.0.b15</strong><i> - 13. December 2021</i></p>
+                    <p>* Fixed a bug that would corrupt your save if it got too big.</p>
+                    <p>* Added Coinflip Online.</p>
+                    <p>* Added a backup system.</p>
+                    <p>* Added the leaderboard.</p>
+                    <p>* Added new cases and collections.</p>
+                    <p>* Adjusted the odds, and added odds for different item qualities.</p>
+                    <p>* Adjusted prices of some underpriced and overpriced skins.</p>
+                    <p>* Items in the Winnings and Select Items pages are now sorted and paged to improve the performance.</p>
+                    <p>* You now get XP from achievements.</p>
+                    <p>* Adjusted XP from cases openings.</p>
+                    <p>* Made Instant Open cost 0.15€ per case (instead of 0.10€).</p>
+                    <p>* Added Time Played statistic.</p>
+                    <p>* Added Gift Codes.</p>
+                    <p>* Improved the UI/UX with a lot of minor changes.</p>
+                    <p>* Fixed some bugs & general improvements.</p>
+                    <br>
+                    <br>
+                    <a href="/changelog.txt">
+              <button class="button n">See earlier versions</button>
+            </a>
+                </div>
+                <div id="about-credits">
+                    <p>Created By <a href="//mtsl.dk">Malthe</a> (@Malthsl)</p>
+                    <p>Contact me via twitter if possible @Malthsl, or my mail malthe@mtsl.dk</p>
+                    <br>
+                    <p>Some Icons are from <a href="//icons8.com">icons8.com</a>.</p>
+                    <br>
+                    <p>
+                        The images used for skins and items are property of Valve Corp, and provided via the Steam Marketplace.
+                    </p>
+                    <p>This site is not associated with Valve Corp.</p>
+                </div>
+            </div>
+        </div>
+        <div class="page" page="betting">
+            <div class="center center-v">
+                <h1 style="padding-top:0">Casino</h1>
+                <div style="display: flex;justify-content: center;margin-bottom:20px">
+                    <button class="button" id="casino-option-trade-in">Trade in skins to Chips</button>
+                    <button class="button" id="casino-option-withdraw">Withdraw Casino Chips to €</button>
+                </div>
+                <div class="betting-cols">
+                    <div>
+                        <!-- Betting Minigames -->
+                        <p style="font-size:14px;margin-bottom:16px;color:#999;text-align:center;">GAMES</p>
+                        <!-- Coin flip -->
+                        <div class="betting-game">
+                            <div>
+                                <img src="images/coin_ctt.png" alt="Coinflip" />
+                            </div>
+                            <button id="action-play-coinflip">Play Coinflip Offline</button>
+                        </div>
+                        <!-- Roulette -->
+                        <div class="betting-game">
+                            <div>
+                                <img src="images/roulette.png" alt="Roulette" />
+                            </div>
+                            <button showpage="roulette">Play Roulette<span class="beta-flag">New!</span></button>
+                        </div>
+                        <!-- Slots -->
+                        <div class="betting-game">
+                            <div>
+                                <img src="images/slots.png" alt="Slots" />
+                            </div>
+                            <button showpage="slots">Play Slot Machine<span class="beta-flag">New!</span></button>
+                        </div>
+                        <!-- Jackpot -->
+                        <div class="betting-game">
+                            <div>
+                                <img src="images/dice.png" alt="Jackpot" />
+                            </div>
+                            <button showpage="jackpot">Play Jackpot</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="font-size:14px;margin-bottom:16px;color:#999;text-align:center;">ONLINE GAMES</p>
+                        <!-- Coin flip -->
+                        <div class="betting-game">
+                            <div>
+                                <img src="images/coin_ctt.png" alt="Coinflip" />
+                            </div>
+                            <button id="action-play-coinflip-1v1">Play Coinflip 1v1</button>
+                        </div>
+                        <p style="font-size:14px;margin-bottom:16px;color:#999;text-align:center;margin-top: 92px;">MORE GAMES</p>
+                        <!-- Crash -->
+                        <div class="betting-game">
+                            <div>
+                                <img src="images/crash.png" alt="Crash" />
+                            </div>
+                            <button showpage="crash">Play Crash</button>
+                        </div>
+                        <!-- Mines -->
+                        <div class="betting-game">
+                            <div>
+                                <img src="images/bomb.png" alt="Mines" />
+                            </div>
+                            <button showpage="mines">Play Mines</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Generated in JS -->
+    </div>
+    <!-- OTHER -->
+    <div id="chat"></div>
+    <div id="version-version">v2.17</div>
+    <link rel="stylesheet" href="https://mtsl.dk/cookies/accepter-html.css">
+    <div id="cookie-accepter"><img src="https://mtsl.dk/cookies/cookie.png" alt="Cookie">
+        <p>If you continue to use this site, you accept the <a href="https://mtsl.dk/cookies">Privacy Policy</a></p>
+        <button onclick="localStorage.g_privacyPolicyAccept='1';document.getElementById('cookie-accepter').style.display='none';">
+        Hide
+      </button>
+    </div>
+    <script>
+        if (localStorage.g_privacyPolicyAccept === '1') document.getElementById('cookie-accepter').style.display = 'none';
+    </script>
+    <script>
+    </script>
+    <script src="./js/lib/q.js"></script>
+    <script src="./js/helper/debug.js"></script>
+    <script src="script.js?v=2.17" type="module"></script>
+    <script>
+        document.body.classList.add('dom-loaded');
+    </script>
+    <script>
+    </script>
+</body>
+
+</html>
