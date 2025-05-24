@@ -2,7 +2,7 @@
 
 
 
-import {openCaseNavigateAway as e} from "./js/opencase.js?v=2.17";
+import {openCaseNavigateAway as e} from "https://raw.githubusercontent.com/1mty1/caseclicker2/refs/heads/main/js/opencase.js";
 import {items as t, onload as o} from "/data/items.js?v=2.17";
 import "/js/inputs.js?v=2.17";
 import "/js/tips.js?v=2.17";
